@@ -1,6 +1,13 @@
 {
-  "name": "devferreirag-form-vercel",
+  "name": "pam-web-questions",
   "version": "1.0.0",
-  "private": true,
-  "type": "module"
-}
+  "description": "Projeto completo para questões de desenvolvimento web, pronto para deploy no Vercel.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel start"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+} 

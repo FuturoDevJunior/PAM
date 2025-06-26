@@ -3,32 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Cliente</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Questões – Desenvolvimento Web</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Cadastro de Cliente</h1>
-  </header>
   <main>
-    <section class="form-section">
-      <form id="clienteForm" novalidate>
+    <h1>Questões – Desenvolvimento Web</h1>
+    <nav>
+      <ul>
+        <li><a href="#questoes">Perguntas e Respostas</a></li>
+        <li><a href="#formulario">Formulário</a></li>
+      </ul>
+    </nav>
+    <section id="questoes">
+      <ol>
+        <li>
+          <strong>No HTML qual a diferença entre &lt;article&gt;, &lt;section&gt;, &lt;aside&gt; e &lt;nav&gt;?</strong>
+          <p>
+            <b>&lt;article&gt;:</b> Representa um conteúdo independente e autocontido, como uma notícia ou post.<br>
+            <b>&lt;section&gt;:</b> Define uma seção temática do documento, agrupando conteúdo relacionado.<br>
+            <b>&lt;aside&gt;:</b> Indica conteúdo complementar, como barras laterais ou caixas de informação.<br>
+            <b>&lt;nav&gt;:</b> Destina-se à navegação, agrupando links de menus ou navegação interna.
+          </p>
+        </li>
+        <li>
+          <strong>O que é Mobile-First Indexing e como ele impacta o ranking dos sites? Explique as melhores práticas para garantir que um site seja otimizado para o Mobile-First Indexing.</strong>
+          <p>
+            Mobile-First Indexing significa que o Google prioriza a versão mobile do site para indexação e ranking. Sites não otimizados para dispositivos móveis podem perder posições nos resultados de busca.<br>
+            <b>Boas práticas:</b> Design responsivo, carregamento rápido, fontes legíveis, botões acessíveis, evitar pop-ups intrusivos e garantir o mesmo conteúdo em desktop e mobile.
+          </p>
+        </li>
+        <li>
+          <strong>O que são dados estruturados (Structured Data) e como eles influenciam o SEO? Cite dois exemplos de tipos de dados estruturados que podem ser usados para melhorar a visibilidade nos resultados de busca do Google.</strong>
+          <p>
+            Dados estruturados são marcações no código (ex: JSON-LD) que ajudam mecanismos de busca a entender o conteúdo da página. Eles melhoram o SEO ao possibilitar rich snippets.<br>
+            <b>Exemplos:</b> <code>FAQPage</code> (perguntas frequentes), <code>Product</code> (produto com preço e avaliações).
+          </p>
+        </li>
+        <li>
+          <strong>Mostre um exemplo de um mixin em SCSS.</strong>
+          <pre><code>@mixin centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  @include centralizar;
+  width: 200px;
+  height: 200px;
+}</code></pre>
+        </li>
+        <li>
+          <strong>Em Javascript qual é a diferença entre métodos definidos diretamente no objeto e métodos definidos no prototype?</strong>
+          <p>
+            Métodos definidos diretamente no objeto são exclusivos daquela instância, enquanto métodos no <code>prototype</code> são compartilhados entre todas as instâncias, economizando memória e promovendo reutilização.
+          </p>
+        </li>
+        <li>
+          <strong>Explique o que são Hooks no React e qual problema eles vieram resolver. Cite pelo menos três exemplos.</strong>
+          <p>
+            Hooks são funções que permitem usar estado e outros recursos do React em componentes funcionais. Eles resolvem a limitação de não poder usar estado ou ciclo de vida em funções.<br>
+            <b>Exemplos:</b> <code>useState</code>, <code>useEffect</code>, <code>useContext</code>.
+          </p>
+        </li>
+        <li>
+          <strong>O que é uma classe anônima em PHP? Em quais situações ela é utilizada? Crie um exemplo de classe anônima que defina um método e imprima uma saudação.</strong>
+          <p>
+            Uma classe anônima em PHP é uma classe sem nome, útil para instâncias únicas ou uso pontual.<br>
+            <b>Exemplo:</b>
+            <pre><code>$obj = new class {
+  public function saudacao() {
+    echo "Olá, mundo!";
+  }
+};
+$obj->saudacao();</code></pre>
+          </p>
+        </li>
+        <li>
+          <strong>O que é um JOIN em SQL? Cite e explique dois tipos de JOIN.</strong>
+          <p>
+            JOIN é uma operação que combina registros de duas ou mais tabelas.<br>
+            <b>INNER JOIN:</b> Retorna apenas registros com correspondência em ambas as tabelas.<br>
+            <b>LEFT JOIN:</b> Retorna todos os registros da tabela da esquerda e os correspondentes da direita, se existirem.
+          </p>
+        </li>
+      </ol>
+    </section>
+    <section id="formulario">
+      <h2>Formulário</h2>
+      <form id="webForm" method="POST" action="/api/submit.php" autocomplete="off">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
-        <div class="error" id="erro-nome">Preencha o nome.</div>
-
         <label for="sobrenome">Sobrenome:</label>
         <input type="text" id="sobrenome" name="sobrenome" required>
-        <div class="error" id="erro-sobrenome">Preencha o sobrenome.</div>
-
         <button type="submit">Enviar</button>
+        <div id="mensagem" class="mensagem"></div>
       </form>
-      <div id="resultado"></div>
     </section>
   </main>
-  <footer>
-    <small>&copy; 2024 PAM - Cadastro de Cliente</small>
-  </footer>
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
-</html>
+</html> 
